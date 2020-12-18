@@ -24,7 +24,7 @@ const register = async (req, res) => {
     const user = await Users.findOne({ email });
     if (user)
       return res
-        .status(409)
+        .status(400)
         .json({ err: 'This email address already exists.' });
 
     const passwordHash = await bcrypt.hash(password, 12);

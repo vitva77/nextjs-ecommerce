@@ -1,8 +1,9 @@
+import styles from './Toast.module.css';
+
 const Toast = ({ msg, handleShow, bgColor }) => {
   return (
     <div
-      className={`toast show position-fixed text-white ${bgColor}`}
-      style={{ top: '5px', right: '5px', zIndex: 9, minWidth: '280px' }}
+      className={`${styles.toast} show text-white ${bgColor}`}
       role='alert'
       aria-live='assertive'
       aria-atomic='true'
@@ -15,6 +16,7 @@ const Toast = ({ msg, handleShow, bgColor }) => {
           data-bs-dismiss='toast'
           aria-label='Close'
           onClick={handleShow}
+          style={{ boxShadow: 'none' }}
         ></button>
       </div>
       <div className='toast-body'>{msg.msg}</div>
