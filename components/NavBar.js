@@ -22,7 +22,8 @@ function NavBar() {
     Cookie.remove('refreshtoken', { path: 'api/auth/accessToken' });
     localStorage.removeItem('firstLogin');
     dispatch({ type: 'AUTH', payload: {} });
-    dispatch({ type: 'NOTIFY', payload: { success: 'Logged out!' } });
+    dispatch({ type: 'NOTIFY', payload: {} });
+    router.push('/signin');
   };
 
   const noLoggedRouter = () => {
@@ -31,6 +32,9 @@ function NavBar() {
         <li className='nav-item'>
           <Link href='/signin'>
             <a className={'nav-link' + isActive('/signin') + ' me-2'}>
+              <svg className='bi' width='16' height='16' fill='currentColor'>
+                <use xlinkHref='/images/icons/bootstrap-icons.svg#person-fill' />
+              </svg>{' '}
               Sign in
             </a>
           </Link>
@@ -38,7 +42,7 @@ function NavBar() {
         <li className='nav-item'>
           <Link href='/register'>
             <a
-              className={'btn btn-outline-primary' + isActive('/register')}
+              className={'btn btn-outline-light' + isActive('/register')}
               role='button'
             >
               Register
@@ -53,7 +57,7 @@ function NavBar() {
     return (
       <li className='nav-item dropdown'>
         <a
-          className='nav-link dropdown-toggle'
+          className='nav-link dropdown-toggle d-flex align-items-center'
           href='#'
           id='navbarDropdownMenuLink'
           role='button'
@@ -92,10 +96,13 @@ function NavBar() {
   };
 
   return (
-    <nav className='navbar navbar-expand-lg navbar-light bg-light'>
+    <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
       <div className='container'>
         <Link href='/'>
           <a className='navbar-brand'>
+            <svg className='bi' width='16' height='16' fill='currentColor'>
+              <use xlinkHref='/images/icons/bootstrap-icons.svg#bag-check-fill' />
+            </svg>{' '}
             <strong>DEVAT</strong>
           </a>
         </Link>
@@ -118,7 +125,15 @@ function NavBar() {
             <li className='nav-item'>
               <Link href='/cart'>
                 <a className={'nav-link' + isActive('/cart') + ' me-4'}>
-                  <i aria-hidden className='fas fa-shopping-cart'></i> Cart
+                  <svg
+                    className='bi'
+                    width='16'
+                    height='16'
+                    fill='currentColor'
+                  >
+                    <use xlinkHref='/images/icons/bootstrap-icons.svg#cart-fill' />
+                  </svg>{' '}
+                  Cart
                 </a>
               </Link>
             </li>

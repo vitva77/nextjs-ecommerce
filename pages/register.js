@@ -47,14 +47,15 @@ const Register = () => {
   }, [auth]);
 
   return (
-    <>
+    <div className='container my-4'>
       <Head>
         <title>Register Page</title>
       </Head>
 
+      <h1 className='text-center'>Create an account</h1>
       <form
-        className='mx-auto my-4'
-        style={{ maxWidth: '500px' }}
+        className='mx-auto mt-4'
+        style={{ maxWidth: '340px' }}
         onSubmit={handleSubmit}
         noValidate
       >
@@ -124,7 +125,7 @@ const Register = () => {
           </Link>
         </p>
       </form>
-    </>
+    </div>
   );
 };
 

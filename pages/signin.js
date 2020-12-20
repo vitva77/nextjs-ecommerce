@@ -32,7 +32,7 @@ const Signin = () => {
 
     if (res.err)
       return dispatch({ type: 'NOTIFY', payload: { error: res.err } });
-    dispatch({ type: 'NOTIFY', payload: { success: res.msg } });
+    dispatch({ type: 'NOTIFY', payload: {} });
 
     dispatch({
       type: 'AUTH',
@@ -55,14 +55,15 @@ const Signin = () => {
   }, [auth]);
 
   return (
-    <>
+    <div className='container my-4'>
       <Head>
         <title>Sign in Page</title>
       </Head>
 
+      <h1 className='text-center'>Sign in</h1>
       <form
-        className='mx-auto my-4'
-        style={{ maxWidth: '500px' }}
+        className='mx-auto'
+        style={{ maxWidth: '340px' }}
         onSubmit={handleSubmit}
         noValidate
       >
@@ -78,10 +79,8 @@ const Signin = () => {
             name='email'
             value={email}
             onChange={handleChangeInput}
+            autoFocus
           />
-          <div id='emailHelp' className='form-text'>
-            We'll never share your email with anyone else.
-          </div>
         </div>
         <div className='mb-3'>
           <label htmlFor='exampleInputPassword1' className='form-label'>
@@ -106,7 +105,7 @@ const Signin = () => {
           </Link>
         </p>
       </form>
-    </>
+    </div>
   );
 };
 

@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema(
     },
     avatar: {
       type: String,
-      default: 'https://www.flaticon.com/svg/static/icons/svg/14/14660.svg',
+      default: 'user.svg',
     },
   },
   {

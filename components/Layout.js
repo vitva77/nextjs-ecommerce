@@ -6,7 +6,7 @@ function Layout({ children }) {
     <>
       <NavBar />
       <Notify />
-      <div className='container'>{children}</div>
+      {children}
     </>
   );
 }

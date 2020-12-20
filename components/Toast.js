@@ -3,7 +3,7 @@ import styles from './Toast.module.css';
 const Toast = ({ msg, handleShow, bgColor }) => {
   return (
     <div
-      className={`${styles.toast} show text-white ${bgColor}`}
+      className={`${styles.toast} text-white ${bgColor}`}
       role='alert'
       aria-live='assertive'
       aria-atomic='true'
